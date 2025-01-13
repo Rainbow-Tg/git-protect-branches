@@ -1,0 +1,26 @@
+{
+  "name": "git-protect-branches",
+  "version": "1.0.0",
+  "description": "禁止dev,test分支等合并到feature分支",
+  "main": "./lib/index.js",
+  "bin": {
+    "gpb": "lib/bin.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rainbow-Tg/git-protect-branches.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rainbow-Tg/git-protect-branches/issues"
+  },
+  "peerDependencies": {
+    "husky": "^8.0.3"
+  },
+  "homepage": "https://github.com/Rainbow-Tg/git-protect-branches#readme"
+}
