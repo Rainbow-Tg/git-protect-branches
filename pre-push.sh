@@ -1,13 +1,13 @@
 #!/bin/bash
 
+# 读取配置文件中的分支列表
+BRANCHES_TO_CHECK=$(node -e "console.log(require('../branches.js').PROTECTED_BRANCHES.join(' '))")
+
 # 当前分支的名称
 CURRENT_BRANCH_NAME=$(git branch --show-current)
 
-# 定义豁免检查的分支列表
-EXEMPT_BRANCHES=("dev" "test" "uat")
-
 # 如果是豁免分支，直接退出
-for branch in "${EXEMPT_BRANCHES[@]}"; do
+for branch in $BRANCHES_TO_CHECK; do
     if [ "$CURRENT_BRANCH_NAME" == "$branch" ]; then
         exit 0
     fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# 可配置的分支名列表，用空格分隔
-BRANCHES_TO_CHECK="dev test hook-dev hook-uat hook-test"
+# 读取配置文件中的分支列表
+BRANCHES_TO_CHECK=$(node -e "console.log(require('../branches.js').PROTECTED_BRANCHES.join(' '))")
 
 # 获取当前分支名
 current_branch=$(git branch --show-current)

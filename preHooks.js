@@ -1,8 +1,8 @@
 const fs = require('fs')
+const { PROTECTED_BRANCHES } = require('./branches')
+const exec = require('child_process').exec
 
 const GIT_CURRENT_BRANCH = 'git rev-parse --abbrev-ref HEAD'
-const exec = require('child_process').exec
-const invalidBranches = ['dev', 'test', 'uat']
 const invalidTag = '.danger_branch'
 
 const promiseRetrieve = () => {
@@ -19,7 +19,7 @@ const promiseRetrieve = () => {
 async function start() {
   try {
     const branchName = await promiseRetrieve()
-    if (!invalidBranches.includes(branchName)) {
+    if (!PROTECTED_BRANCHES.includes(branchName.trim())) {
       // 当不是非法分支时，检测是否包含非法分支的特殊文件.danger_branch
       const exist = fs.existsSync(invalidTag)
       if (exist) {
