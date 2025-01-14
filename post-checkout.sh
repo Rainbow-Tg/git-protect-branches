@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 读取配置文件中的分支列表
-BRANCHES_TO_CHECK=$(node -e "console.log(require('../branches.js').PROTECTED_BRANCHES.join(' '))")
+BRANCHES_TO_CHECK=$(node -e "console.log(require(process.cwd() + '/branches.js').PROTECTED_BRANCHES.join(' '))")
 
 # 获取当前分支名
 current_branch=$(git branch --show-current)
