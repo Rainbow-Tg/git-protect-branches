@@ -12,7 +12,7 @@ for branch in $BRANCHES_TO_CHECK; do
         # 检查 danger 文件是否存在
 
         if [ ! -f ".danger_branch" ]; then
-            echo "正在创建 danger_branch."
+            echo "正在创建 .danger_branch"
             touch .danger_branch
             echo ".danger_branch 已创建"
         fi
