@@ -1,6 +1,6 @@
-// 需要特殊处理的分支配置
-const PROTECTED_BRANCHES = ['dev', 'test', 'hook-dev', 'hook-uat', 'hook-test', 'uat'];
+// 测试分支配置
+const PROTECTED_BRANCHES = ["dev", "test", "uat", "tat", "sit"];
 
 module.exports = {
-  PROTECTED_BRANCHES
-}; 
+  PROTECTED_BRANCHES,
+};

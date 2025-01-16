@@ -10,7 +10,6 @@ current_branch=$(git branch --show-current)
 for branch in $BRANCHES_TO_CHECK; do
     if [[ "$current_branch" == "$branch" ]]; then
         # 检查 danger 文件是否存在
-
         if [ ! -f ".danger_branch" ]; then
             echo "正在创建 .danger_branch"
             touch .danger_branch
